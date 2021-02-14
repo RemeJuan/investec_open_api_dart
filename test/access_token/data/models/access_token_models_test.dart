@@ -21,4 +21,9 @@ void main() {
     //assert
     expect(result, accessTokenFixture);
   });
+
+  test('verify stringify enabled', () async {
+    //assert
+    expect(accessTokenFixture.stringify, true);
+  });
 }
