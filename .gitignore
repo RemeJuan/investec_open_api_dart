@@ -10,6 +10,7 @@
 .svn/
 coverage/
 *.dart.vm.json
+/lib/runner.dart
 
 # IntelliJ related
 *.iml
