@@ -21,16 +21,30 @@ void main() {
 
   test('should perform a GET request on a URL with digest being the endpoint',
       () async {
-    when(mockClient.get(any)).thenAnswer(
+    when(mockClient.post(
+      any,
+      body: anyNamed('body'),
+      headers: anyNamed('headers'),
+    )).thenAnswer(
       (_) async => http.Response(data, 200),
     );
+    const mockClientId = 'mock-client-id';
+    const mockSecret = 'mock-secret';
 
     final mockUrl = Uri.parse(
       'https://openapi.investec.com/identity/v2/oauth2/token',
     );
     //act
-    await source.getToken();
+    await source.getToken(mockClientId, mockSecret);
     //assert
-    verify(mockClient.get(mockUrl));
+    final body = {
+      'grant_type': 'client_credentials',
+      'scope': 'accounts',
+    };
+    final headers = {
+      'Authorization': 'Basic bW9jay1jbGllbnQtaWQ6bW9jay1zZWNyZXQ=',
+      'Content-Type': 'application/x-www-form-urlencoded',
+    };
+    verify(mockClient.post(mockUrl, body: body, headers: headers));
   });
 }

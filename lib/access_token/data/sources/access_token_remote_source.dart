@@ -5,7 +5,10 @@ import 'package:investec_open_api/access_token/domain/entities/access_token_enti
 import 'package:investec_open_api/core/endpoint_builder.dart';
 
 abstract class AccessTokenRemoteSource {
-  Future<AccessTokenEntity> getToken();
+  Future<AccessTokenEntity> getToken(
+    String clientId,
+    String secret,
+  );
 }
 
 class AccessTokenRemoteSourceImpl implements AccessTokenRemoteSource {
@@ -14,12 +17,30 @@ class AccessTokenRemoteSourceImpl implements AccessTokenRemoteSource {
   AccessTokenRemoteSourceImpl(this.httpClient);
 
   @override
-  Future<AccessTokenEntity> getToken() async {
+  Future<AccessTokenEntity> getToken(
+    String clientId,
+    String secret,
+  ) async {
     final uri = EndpointBuilder.uri('/identity/v2/oauth2/token');
 
-    final request = await httpClient.get(uri);
+    final bytes = utf8.encode('$clientId:$secret');
+    final base64Str = base64.encode(bytes);
+
+    final headers = {
+      'Authorization': 'Basic $base64Str',
+      'Content-Type': 'application/x-www-form-urlencoded',
+    };
+    final request = await httpClient.post(
+      uri,
+      body: {
+        'grant_type': 'client_credentials',
+        'scope': 'accounts',
+      },
+      headers: headers,
+    );
 
     return AccessTokenEntity.fromJson(
-        jsonDecode(request.body) as Map<String, dynamic>);
+      jsonDecode(request.body) as Map<String, dynamic>,
+    );
   }
 }

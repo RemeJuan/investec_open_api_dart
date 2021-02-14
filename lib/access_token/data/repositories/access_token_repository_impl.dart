@@ -8,7 +8,10 @@ class AccessTokenRepositoryImpl implements AccessTokenRepository {
   AccessTokenRepositoryImpl(this.remoteSource);
 
   @override
-  Future<AccessTokenEntity> getToken() async {
-    return remoteSource.getToken();
+  Future<AccessTokenEntity> getToken(
+    String clientId,
+    String secret,
+  ) async {
+    return remoteSource.getToken(clientId, secret);
   }
 }

@@ -1,6 +1,5 @@
 import 'package:investec_open_api/access_token/domain/repositories/access_token_repositorye.dart';
 import 'package:investec_open_api/access_token/domain/usecases/get_access_token_usecase.dart';
-import 'package:investec_open_api/core/usecase.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
@@ -20,14 +19,19 @@ void main() {
 
   test('should get access details from repository', () async {
     //arrange
-    when(mockRepository.getToken()).thenAnswer(
+    const mockClientId = 'mock-client-id';
+    const mockSecret = 'mock-secret';
+    when(mockRepository.getToken(any, any)).thenAnswer(
       (_) async => accessTokenFixture,
     );
     //act
-    final result = await useCase(NoParams());
+    final result = await useCase(GetAccessTokenParams(
+      mockClientId,
+      mockSecret,
+    ));
     //assert
     expect(result, accessTokenFixture);
-    verify(mockRepository.getToken());
+    verify(mockRepository.getToken(mockClientId, mockSecret));
     verifyNoMoreInteractions(mockRepository);
   });
 }

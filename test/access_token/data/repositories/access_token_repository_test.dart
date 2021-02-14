@@ -21,14 +21,17 @@ void main() {
   group('AccessTokenRepository', () {
     test('should should return data when the remote source is successful',
         () async {
+      const mockClientId = 'mock-client-id';
+      const mockSecret = 'mock-secret';
+
       //arrange
-      when(mockRemoteSource.getToken()).thenAnswer(
+      when(mockRemoteSource.getToken(any, any)).thenAnswer(
         (_) async => accessTokenFixture,
       );
       //act
-      final response = await repository.getToken();
+      final response = await repository.getToken(mockClientId, mockSecret);
       //assert
-      verify(mockRemoteSource.getToken());
+      verify(mockRemoteSource.getToken(mockClientId, mockSecret));
       expect(response, equals(accessTokenFixture));
     });
   });

@@ -26,8 +26,9 @@ class MockAccessTokenRepository extends _i1.Mock
   }
 
   @override
-  _i4.Future<_i2.AccessTokenEntity> getToken() =>
-      (super.noSuchMethod(Invocation.method(#getToken, []),
+  _i4.Future<_i2.AccessTokenEntity> getToken(
+          String? clientId, String? secret) =>
+      (super.noSuchMethod(Invocation.method(#getToken, [clientId, secret]),
               returnValue: Future.value(_FakeAccessTokenEntity()))
           as _i4.Future<_i2.AccessTokenEntity>);
 }
