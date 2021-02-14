@@ -9,20 +9,20 @@ import 'package:investec_open_api/accounts/domain/entities/accounts_entity.dart'
 class InvestecOpenAPI {
   final String clientId;
   final String secret;
+  final http.Client httpClient;
 
   const InvestecOpenAPI({
     required this.clientId,
     required this.secret,
+    required this.httpClient,
   });
 
-  Future<AccessTokenEntity> _getAccessToken(http.Client client) async {
-    return AccessTokenRemoteSourceImpl(client).getToken(clientId, secret);
+  Future<AccessTokenEntity> _getAccessToken() async {
+    return AccessTokenRemoteSourceImpl(httpClient).getToken(clientId, secret);
   }
 
   Future<AccountsEntity> getAccounts() async {
-    final httpClient = http.Client();
-
-    final token = await _getAccessToken(httpClient);
+    final token = await _getAccessToken();
 
     return AccountsRemoteSourceImpl(httpClient, token: token).getAccounts();
   }
