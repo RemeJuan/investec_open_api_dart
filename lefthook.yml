@@ -1,0 +1,16 @@
+pre-push:
+  commands:
+    test:
+      tags: unit testing
+      run: dart test test
+commit-msg:
+  commands:
+    validate:
+      tags: validate commit message
+      run: flutter pub run ./git_hooks/commit_message.dart
+post-receive:
+  commands:
+    flutter:
+      run: dart pub get
+    lefthook:
+      run: lefthook install
