@@ -19,6 +19,7 @@ class AccessTokenRemoteSourceImpl implements AccessTokenRemoteSource {
 
     final request = await httpClient.get(uri);
 
-    return AccessTokenEntity.fromJson(jsonDecode(request.body));
+    return AccessTokenEntity.fromJson(
+        jsonDecode(request.body) as Map<String, dynamic>);
   }
 }

@@ -15,10 +15,10 @@ class AccessTokenEntity extends Equatable {
 
   factory AccessTokenEntity.fromJson(Map<String, dynamic> json) {
     return AccessTokenEntity(
-      accessToken: json['access_token'],
-      expires: json['expires_in'],
-      scope: json['scope'],
-      tokenType: json['token_type'],
+      accessToken: json['access_token'] as String,
+      expires: json['expires_in'] as int,
+      scope: json['scope'] as String,
+      tokenType: json['token_type'] as String,
     );
   }
 

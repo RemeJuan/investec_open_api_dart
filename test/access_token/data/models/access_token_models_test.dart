@@ -14,7 +14,8 @@ void main() {
 
   test('fromJson - should return a valid model', () async {
     //arrange
-    final jsonMap = jsonDecode(fixture('access_token/get_access_token.json'));
+    final jsonMap = jsonDecode(fixture('access_token/get_access_token.json'))
+        as Map<String, dynamic>;
     //act
     final result = AccessTokenEntity.fromJson(jsonMap);
     //assert
