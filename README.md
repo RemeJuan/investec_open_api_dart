@@ -1,14 +1,46 @@
-# investec_open_api
+# Investec Programmable Banking Open API Wrapper
 
-A new Flutter package project.
+A Dart null-safe wrapper to be able to use the Investec OpenAPI from your Dart/Flutter projects
+
+[Investec developer documentation](https://developer.investec.com/programmable-banking/#programmable-banking)
+
+---
 
 ## Getting Started
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+Currently and Active WIP and has not been submitted to pub.dev yet.
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+---
+
+## Usage
+
+---
+
+## Setup:
+
+```dart
+import 'investec_open_api/investec_open_api.dart';
+
+final api = InvestecOpenAPI(
+  clientId: 'YOUR_CLIENT_ID',
+  secret: 'YOUR_SECRET',
+);
+```
+
+---
+
+## Available Methods:
+
+#### api.getAccounts() (Unimplemented)
+
+#### api.getAccountTransactions() (Unimplemented)
+
+#### api.getAccountBalance() (Unimplemented)
+
+---
+
+Hope you find this useful! Please give a star and feel free to contribute or log issues and feature requests!
+
+And if you want to say thanks, then go ahead:
+
+<a href="https://www.buymeacoffee.com/remelehane" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-red.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
