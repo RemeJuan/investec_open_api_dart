@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:investec_open_api/accounts/domain/entities/account_entity.dart';
 import 'package:investec_open_api/accounts/domain/entities/accounts_entity.dart';
 import 'package:test/test.dart';
 
@@ -12,15 +13,34 @@ void main() {
     expect(accountsFixture, isA<AccountsEntity>());
   });
 
-  test('fromJson - should return a valid model', () async {
-    //arrange
-    final jsonMap = jsonDecode(
-      fixture('accounts/get_accounts.json'),
-    ) as Map<String, dynamic>;
-    //act
-    final result = AccountsEntity.fromJson(jsonMap);
-    //assert
-    expect(result, accountsFixture);
+  group('AccountsEntity', () {
+    test('fromJson - should return a valid model', () async {
+      //arrange
+      final jsonMap = jsonDecode(
+        fixture('accounts/get_accounts.json'),
+      ) as Map<String, dynamic>;
+      //act
+      final result = AccountsEntity.fromJson(jsonMap);
+      //assert
+      expect(result, accountsFixture);
+    });
+  });
+
+  group('AccountEntity', () {
+    test('fromJson - should return a valid model', () async {
+      //arrange
+
+      //act
+      final result = AccountEntity.fromJson(<String, dynamic>{
+        'accountId': '123',
+        'accountNumber': '112233',
+        'accountName': 'John Smith',
+        'referenceName': 'Mr J Smith',
+        'productName': 'Private Bank Account'
+      });
+      //assert
+      expect(result, accountFixture);
+    });
   });
 
   test('verify stringify enabled', () async {

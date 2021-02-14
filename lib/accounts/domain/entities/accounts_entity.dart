@@ -28,7 +28,7 @@ class AccountsEntity extends Equatable {
   bool? get stringify => true;
 }
 
-class AccountsData extends Equatable {
+class AccountsData {
   final List<AccountEntity> accounts;
 
   const AccountsData({
@@ -46,12 +46,6 @@ class AccountsData extends Equatable {
       accounts: accounts,
     );
   }
-
-  @override
-  List<Object?> get props => [accounts];
-
-  @override
-  bool? get stringify => true;
 }
 
 class AccountsMeta extends Equatable {
