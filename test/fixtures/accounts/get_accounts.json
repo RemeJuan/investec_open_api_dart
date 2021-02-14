@@ -1,0 +1,19 @@
+{
+  "data": {
+    "accounts": [
+      {
+        "accountId": "123",
+        "accountNumber": "112233",
+        "accountName": "John Smith",
+        "referenceName": "Mr J Smith",
+        "productName": "Private Bank Account"
+      }
+    ]
+  },
+  "links": {
+    "self": "mock-url"
+  },
+  "meta": {
+    "totalPages": 1
+  }
+}
