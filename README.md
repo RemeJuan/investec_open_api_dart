@@ -21,11 +21,15 @@ Currently and Active WIP and has not been submitted to pub.dev yet.
 ## Setup:
 
 ```dart
+import 'package:http/http.dart' as http;
 import 'investec_open_api/investec_open_api.dart';
+
+final httpClient = http.Client();
 
 final api = InvestecOpenAPI(
   clientId: 'YOUR_CLIENT_ID',
   secret: 'YOUR_SECRET',
+  httpClient: httpClient,
 );
 ```
 
@@ -33,7 +37,58 @@ final api = InvestecOpenAPI(
 
 ## Available Methods:
 
-#### api.getAccounts() (Unimplemented)
+#### api.getAccounts()
+
+This returns a list of your accounts as well as some meta data
+
+**Sample API Response**
+
+```json
+{
+  "data": {
+    "accounts": [
+      {
+        "accountId": "123",
+        "accountNumber": "112233",
+        "accountName": "John Smith",
+        "referenceName": "Mr J Smith",
+        "productName": "Private Bank Account"
+      }
+    ]
+  },
+  "links": {
+    "self": "mock-url"
+  },
+  "meta": {
+    "totalPages": 1
+  }
+}
+```
+
+**Sample resulting dart class**
+
+```dart
+
+const accounts = AccountsEntity(
+  data: AccountsData(
+    accounts: [
+      AccountEntity(
+        accountId: '123',
+        accountNumber: '112233',
+        accountName: 'John Smith',
+        referenceName: 'Mr J Smith',
+        productName: 'Private Bank Account',
+      )
+    ],
+  ),
+  links: AccountsLinks(
+    self: 'mock-url',
+  ),
+  meta: AccountsMeta(
+    totalPages: 1,
+  ),
+);
+```
 
 #### api.getAccountTransactions() (Unimplemented)
 
