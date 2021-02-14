@@ -4,6 +4,7 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 
+import '../../../fixtures/access_token/access_token_fixture.dart';
 import '../../../fixtures/fixture_reader.dart';
 import 'accounts_remote_source_test.mocks.dart';
 
@@ -16,12 +17,18 @@ void main() {
 
   setUp(() {
     mockClient = MockClient();
-    source = AccountsRemoteSourceImpl(mockClient);
+    source = AccountsRemoteSourceImpl(
+      mockClient,
+      token: accessTokenFixture,
+    );
   });
 
   test('should perform a GET request on a URL with digest being the endpoint',
       () async {
-    when(mockClient.get(any)).thenAnswer(
+    when(mockClient.get(
+      any,
+      headers: anyNamed('headers'),
+    )).thenAnswer(
       (_) async => http.Response(data, 200),
     );
 
@@ -31,6 +38,7 @@ void main() {
     //act
     await source.getAccounts();
     //assert
-    verify(mockClient.get(mockUrl));
+    const headers = <String, String>{'Authorization': 'Bearer mock-token'};
+    verify(mockClient.get(mockUrl, headers: headers));
   });
 }
