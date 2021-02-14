@@ -1,4 +1,3 @@
-import 'package:equatable/equatable.dart';
 import 'package:investec_open_api/access_token/domain/entities/access_token_entity.dart';
 import 'package:investec_open_api/access_token/domain/repositories/access_token_repositorye.dart';
 import 'package:investec_open_api/core/usecase.dart';
@@ -15,12 +14,9 @@ class GetAccessTokenUseCase
   }
 }
 
-class GetAccessTokenParams extends Equatable {
+class GetAccessTokenParams {
   final String clientId;
   final String secret;
 
   GetAccessTokenParams(this.clientId, this.secret);
-
-  @override
-  List<Object?> get props => [clientId, secret];
 }
