@@ -24,10 +24,11 @@ jobs:
         with:
           channel: 'beta' # or: 'dev' or 'beta'
 
+      - name: Fetch dependencies
+        run: dart pub get
+
       - name: Run Test
-        run: |
-          dart pub get
-          flutter test --coverage test
+        run: flutter test --coverage test
 
       - name: CodeCov
         uses: codecov/codecov-action@v1

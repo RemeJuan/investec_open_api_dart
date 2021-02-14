@@ -4,6 +4,8 @@ A Dart null-safe wrapper to be able to use the Investec OpenAPI from your Dart/F
 
 [Investec developer documentation](https://developer.investec.com/programmable-banking/#programmable-banking)
 
+[![codecov](https://codecov.io/gh/RemeJuan/investec_open_api_dart/branch/master/graph/badge.svg?token=3T9DEDF1VT)](https://codecov.io/gh/RemeJuan/investec_open_api_dart)
+![Flutter Test](https://github.com/RemeJuan/investec_open_api_dart/workflows/Flutter%20Test/badge.svg?branch=master)
 ---
 
 ## Getting Started
