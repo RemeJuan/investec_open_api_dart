@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:investec_open_api/data/models/access_token_model.dart';
 import 'package:investec_open_api/domain/entities/access_token_entity.dart';
 import 'package:test/test.dart';
 
@@ -17,7 +18,7 @@ void main() {
     final jsonMap = jsonDecode(fixture('access_token/get_access_token.json'))
         as Map<String, dynamic>;
     //act
-    final result = AccessTokenEntity.fromJson(jsonMap);
+    final result = AccessTokenModel.fromJson(jsonMap);
     //assert
     expect(result, accessTokenFixture);
   });

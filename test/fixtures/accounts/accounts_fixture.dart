@@ -1,15 +1,15 @@
-import 'package:investec_open_api/domain/entities/account_entity.dart';
-import 'package:investec_open_api/domain/entities/accounts_entity.dart';
+import 'package:investec_open_api/data/models/account_model.dart';
+import 'package:investec_open_api/data/models/accounts_model.dart';
 
-const accountsFixture = AccountsEntity(
-  data: AccountsData(
+const accountsFixture = AccountsModel(
+  data: AccountsDataModel(
     accounts: [accountFixture],
   ),
   links: accountLinkFixture,
   meta: accountMetaFixture,
 );
 
-const accountFixture = AccountEntity(
+const accountFixture = AccountModel(
   accountId: '123',
   accountNumber: '112233',
   accountName: 'John Smith',
@@ -17,10 +17,10 @@ const accountFixture = AccountEntity(
   productName: 'Private Bank Account',
 );
 
-const accountLinkFixture = AccountsLinks(
+const accountLinkFixture = AccountsLinksModel(
   self: 'mock-url',
 );
 
-const accountMetaFixture = AccountsMeta(
+const accountMetaFixture = AccountsMetaModel(
   totalPages: 1,
 );

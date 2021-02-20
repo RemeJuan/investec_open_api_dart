@@ -1,6 +1,7 @@
 import 'dart:convert';
 
-import 'package:investec_open_api/domain/entities/account_entity.dart';
+import 'package:investec_open_api/data/models/account_model.dart';
+import 'package:investec_open_api/data/models/accounts_model.dart';
 import 'package:investec_open_api/domain/entities/accounts_entity.dart';
 import 'package:test/test.dart';
 
@@ -13,25 +14,25 @@ void main() {
     expect(accountsFixture, isA<AccountsEntity>());
   });
 
-  group('AccountsEntity', () {
+  group('AccountsModel', () {
     test('fromJson - should return a valid model', () async {
       //arrange
       final jsonMap = jsonDecode(
         fixture('accounts/get_accounts.json'),
       ) as Map<String, dynamic>;
       //act
-      final result = AccountsEntity.fromJson(jsonMap);
+      final result = AccountsModel.fromJson(jsonMap);
       //assert
       expect(result, accountsFixture);
     });
   });
 
-  group('AccountEntity', () {
+  group('AccountModel', () {
     test('fromJson - should return a valid model', () async {
       //arrange
 
       //act
-      final result = AccountEntity.fromJson(<String, dynamic>{
+      final result = AccountModel.fromJson(<String, dynamic>{
         'accountId': '123',
         'accountNumber': '112233',
         'accountName': 'John Smith',
