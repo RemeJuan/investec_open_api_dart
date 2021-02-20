@@ -1,3 +1,21 @@
 genb: dart pub run build_runner build --delete-conflicting-outputs
 genw: dart pub run build_runner watch --delete-conflicting-outputs
 test: dart test test
+bump:
+  major:
+    - cider bump major -r
+    - $tag
+  minor:
+    - cider bump minor -r
+    - $tag
+  patch:
+    - cider bump patch -r
+    - - $tag
+  build:
+    - cider bump build -r
+    - $tag
+tag:
+  - echo "tagging"
+  - git tag "$(cider version)"
+  - git add .
+  - git commit --amend --no-edit

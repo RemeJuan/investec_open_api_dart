@@ -1,10 +1,12 @@
 name: investec_open_api
 description: Dart implementation for Investecs Open API (http://openapi.investec.com)
-version: 0.0.1-nullsafety.1
+version: 0.0.1-nullsafety+1
 repository: https://github.com/RemeJuan/investec_open_api_dart
 
 environment:
   sdk: ">=2.12.0-0 <3.0.0"
+
+scripts: derry.yaml
 
 dependencies:
   equatable: ^2.0.0-nullsafety.3
