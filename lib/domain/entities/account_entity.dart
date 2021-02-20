@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-class AccountEntity extends Equatable {
+abstract class AccountEntity extends Equatable {
   final String accountId;
   final String accountNumber;
   final String accountName;

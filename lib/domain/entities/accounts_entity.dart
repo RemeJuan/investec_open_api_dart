@@ -2,7 +2,7 @@ import 'package:equatable/equatable.dart';
 
 import 'account_entity.dart';
 
-class AccountsEntity extends Equatable {
+abstract class AccountsEntity extends Equatable {
   final AccountsDataEntity data;
   final AccountsLinksEntity links;
   final AccountsMetaEntity meta;
@@ -20,7 +20,7 @@ class AccountsEntity extends Equatable {
   bool? get stringify => true;
 }
 
-class AccountsDataEntity {
+abstract class AccountsDataEntity {
   final List<AccountEntity> accounts;
 
   const AccountsDataEntity({
@@ -28,7 +28,7 @@ class AccountsDataEntity {
   });
 }
 
-class AccountsMetaEntity extends Equatable {
+abstract class AccountsMetaEntity extends Equatable {
   final int totalPages;
 
   const AccountsMetaEntity({
@@ -42,7 +42,7 @@ class AccountsMetaEntity extends Equatable {
   bool? get stringify => true;
 }
 
-class AccountsLinksEntity extends Equatable {
+abstract class AccountsLinksEntity extends Equatable {
   final String self;
 
   const AccountsLinksEntity({
