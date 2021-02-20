@@ -1,5 +1,5 @@
-import 'package:investec_open_api/accounts/domain/entities/account_entity.dart';
-import 'package:investec_open_api/accounts/domain/entities/accounts_entity.dart';
+import 'package:investec_open_api/domain/entities/account_entity.dart';
+import 'package:investec_open_api/domain/entities/accounts_entity.dart';
 
 const accountsFixture = AccountsEntity(
   data: AccountsData(
