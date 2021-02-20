@@ -1,5 +1,5 @@
 name: investec_open_api
-description: A new Flutter package project.
+description: Dart implementation for Investecs Open API (http://openapi.investec.com)
 version: 0.0.1-nullsafety.1
 repository: https://github.com/RemeJuan/investec_open_api_dart
 
