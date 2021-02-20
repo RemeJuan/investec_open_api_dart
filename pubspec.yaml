@@ -1,8 +1,7 @@
 name: investec_open_api
 description: A new Flutter package project.
-version: 0.0.1
-author:
-homepage:
+version: 0.0.1-nullsafety.1
+repository: https://github.com/RemeJuan/investec_open_api_dart
 
 environment:
   sdk: ">=2.12.0-0 <3.0.0"

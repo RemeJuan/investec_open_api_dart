@@ -1,3 +1,3 @@
-## [0.0.1] - TODO: Add release date.
+## [0.0.1-nullsafety.1] - 20 February 2021.
 
-* TODO: Describe initial release.
+* First release supporting `api.getAccounts`.
