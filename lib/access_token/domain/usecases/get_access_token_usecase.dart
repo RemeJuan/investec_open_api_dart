@@ -8,6 +8,7 @@ class GetAccessTokenUseCase
 
   GetAccessTokenUseCase(this.repository);
 
+  /// REST call for retrieving the [AccessTokenEntity} data from Investec
   @override
   Future<AccessTokenEntity> call(GetAccessTokenParams params) async {
     return await repository.getToken(params.clientId, params.secret);

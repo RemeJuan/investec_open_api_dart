@@ -16,6 +16,8 @@ class AccessTokenRemoteSourceImpl implements AccessTokenRemoteSource {
 
   AccessTokenRemoteSourceImpl(this.httpClient);
 
+  /// Repository implementation for getting available accounts from the Rest API
+  ///
   @override
   Future<AccessTokenEntity> getToken(
     String clientId,

@@ -18,6 +18,7 @@ class AccountsRemoteSourceImpl implements AccountsRemoteSource {
     required this.token,
   });
 
+  /// REST call for retrieving accounts data from Investec
   @override
   Future<AccountsEntity> getAccounts() async {
     final uri = EndpointBuilder.uri('/za/pb/v1/accounts');

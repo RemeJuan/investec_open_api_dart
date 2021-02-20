@@ -7,6 +7,7 @@ class AccessTokenRepositoryImpl implements AccessTokenRepository {
 
   AccessTokenRepositoryImpl(this.remoteSource);
 
+  /// Repository implementation for getting the [AccessTokenEntity] from the Rest API
   @override
   Future<AccessTokenEntity> getToken(
     String clientId,

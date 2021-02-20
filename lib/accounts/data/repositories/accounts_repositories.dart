@@ -7,6 +7,7 @@ class AccountsRepositoryImpl implements AccountsRepository {
 
   AccountsRepositoryImpl(this.remoteSource);
 
+  /// Repository implementation for getting available accounts from the Rest API
   @override
   Future<AccountsEntity> getAccounts() async {
     return remoteSource.getAccounts();

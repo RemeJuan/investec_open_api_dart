@@ -17,10 +17,13 @@ class InvestecOpenAPI {
     required this.httpClient,
   });
 
+  /// Gets the access token which is sent with the headers on every API call
   Future<AccessTokenEntity> _getAccessToken() async {
     return AccessTokenRemoteSourceImpl(httpClient).getToken(clientId, secret);
   }
 
+  /// Returns a list of all available accounts available for the [AccessTokenEntity]
+  /// returned through [_getAccessToken].
   Future<AccountsEntity> getAccounts() async {
     final token = await _getAccessToken();
 
