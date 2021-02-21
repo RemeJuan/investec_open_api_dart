@@ -5,12 +5,12 @@ bump:
   major:
     - cider bump major -r
     - $tag
-  minor:
+  feature:
     - cider bump minor -r
     - $tag
-  patch:
+  fix:
     - cider bump patch -r
-    - - $tag
+    - $tag
   build:
     - cider bump build -r
     - $tag
