@@ -1,6 +1,6 @@
 import 'package:investec_open_api/data/sources/access_token_remote_source.dart';
 import 'package:investec_open_api/domain/entities/access_token_entity.dart';
-import 'package:investec_open_api/domain/repositories/access_token_repositorye.dart';
+import 'package:investec_open_api/domain/repositories/access_token_repository.dart';
 
 class AccessTokenRepositoryImpl implements AccessTokenRepository {
   final AccessTokenRemoteSource remoteSource;

@@ -6,7 +6,7 @@ import 'dart:async' as _i4;
 
 import 'package:investec_open_api/domain/entities/access_token_entity.dart'
     as _i2;
-import 'package:investec_open_api/domain/repositories/access_token_repositorye.dart'
+import 'package:investec_open_api/domain/repositories/access_token_repository.dart'
     as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 
