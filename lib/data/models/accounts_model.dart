@@ -1,13 +1,15 @@
+import 'package:investec_open_api/data/models/shared_models.dart';
 import 'package:investec_open_api/domain/entities/account_entity.dart';
 import 'package:investec_open_api/domain/entities/accounts_entity.dart';
+import 'package:investec_open_api/domain/entities/shared_entities.dart';
 
 import 'account_model.dart';
 
 class AccountsModel extends AccountsEntity {
   const AccountsModel({
-    required AccountsDataModel data,
-    required AccountsLinksModel links,
-    required AccountsMetaModel meta,
+    required AccountsDataEntity data,
+    required AccountsLinksEntity links,
+    required AccountsMetaEntity meta,
   }) : super(
           data: data,
           links: links,
@@ -39,32 +41,6 @@ class AccountsDataModel extends AccountsDataEntity {
 
     return AccountsDataModel(
       accounts: accounts,
-    );
-  }
-}
-
-class AccountsMetaModel extends AccountsMetaEntity {
-  const AccountsMetaModel({
-    required int totalPages,
-  }) : super(
-          totalPages: totalPages,
-        );
-
-  factory AccountsMetaModel.fromJson(Map<String, dynamic> json) {
-    return AccountsMetaModel(
-      totalPages: json['totalPages'] as int,
-    );
-  }
-}
-
-class AccountsLinksModel extends AccountsLinksEntity {
-  const AccountsLinksModel({
-    required String self,
-  }) : super(self: self);
-
-  factory AccountsLinksModel.fromJson(Map<String, dynamic> json) {
-    return AccountsLinksModel(
-      self: json['self'] as String,
     );
   }
 }
