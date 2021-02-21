@@ -15,7 +15,7 @@ abstract class AccountsEntity extends Equatable {
   });
 
   @override
-  List<Object?> get props => [data, meta, links];
+  List<Object?> get props => [meta, links];
 
   @override
   bool? get stringify => true;
