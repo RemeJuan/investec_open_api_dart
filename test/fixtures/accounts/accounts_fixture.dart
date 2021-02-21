@@ -1,6 +1,7 @@
 import 'package:investec_open_api/data/models/account_model.dart';
 import 'package:investec_open_api/data/models/accounts_model.dart';
-import 'package:investec_open_api/data/models/shared_models.dart';
+
+import '../shared_fixtures.dart';
 
 const accountsFixture = AccountsModel(
   data: AccountsDataModel(
@@ -16,12 +17,4 @@ const accountFixture = AccountModel(
   accountName: 'John Smith',
   referenceName: 'Mr J Smith',
   productName: 'Private Bank Account',
-);
-
-const accountLinkFixture = AccountsLinksModel(
-  self: 'mock-url',
-);
-
-const accountMetaFixture = AccountsMetaModel(
-  totalPages: 1,
 );
