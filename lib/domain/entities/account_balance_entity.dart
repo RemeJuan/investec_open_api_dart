@@ -3,8 +3,8 @@ import 'package:investec_open_api/domain/entities/shared_entities.dart';
 
 abstract class AccountBalanceEntity extends Equatable {
   final AccountBalanceDataEntity data;
-  final AccountsLinksEntity links;
-  final AccountsMetaEntity meta;
+  final LinksEntity links;
+  final MetaEntity meta;
 
   const AccountBalanceEntity({
     required this.data,

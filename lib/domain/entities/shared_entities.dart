@@ -1,9 +1,9 @@
 import 'package:equatable/equatable.dart';
 
-abstract class AccountsMetaEntity extends Equatable {
+abstract class MetaEntity extends Equatable {
   final int totalPages;
 
-  const AccountsMetaEntity({
+  const MetaEntity({
     required this.totalPages,
   });
 
@@ -14,10 +14,10 @@ abstract class AccountsMetaEntity extends Equatable {
   bool? get stringify => true;
 }
 
-abstract class AccountsLinksEntity extends Equatable {
+abstract class LinksEntity extends Equatable {
   final String self;
 
-  const AccountsLinksEntity({
+  const LinksEntity({
     required this.self,
   });
 

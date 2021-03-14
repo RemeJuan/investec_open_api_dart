@@ -1,12 +1,10 @@
 import 'package:equatable/equatable.dart';
 import 'package:investec_open_api/domain/entities/shared_entities.dart';
 
-import 'account_entity.dart';
-
 abstract class AccountsEntity extends Equatable {
   final AccountsDataEntity data;
-  final AccountsLinksEntity links;
-  final AccountsMetaEntity meta;
+  final LinksEntity links;
+  final MetaEntity meta;
 
   const AccountsEntity({
     required this.data,
@@ -27,4 +25,32 @@ abstract class AccountsDataEntity {
   const AccountsDataEntity({
     required this.accounts,
   });
+}
+
+abstract class AccountEntity extends Equatable {
+  final String accountId;
+  final String accountNumber;
+  final String accountName;
+  final String referenceName;
+  final String productName;
+
+  const AccountEntity({
+    required this.accountId,
+    required this.accountNumber,
+    required this.accountName,
+    required this.referenceName,
+    required this.productName,
+  });
+
+  @override
+  List<Object?> get props => [
+        accountId,
+        accountNumber,
+        accountName,
+        referenceName,
+        productName,
+      ];
+
+  @override
+  bool? get stringify => true;
 }

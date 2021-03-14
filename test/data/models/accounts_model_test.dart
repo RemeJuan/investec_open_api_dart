@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:investec_open_api/data/models/account_model.dart';
 import 'package:investec_open_api/data/models/accounts_model.dart';
 import 'package:investec_open_api/domain/entities/accounts_entity.dart';
 import 'package:test/test.dart';

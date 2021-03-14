@@ -1,26 +1,26 @@
 import 'package:investec_open_api/domain/entities/shared_entities.dart';
 
-class AccountsMetaModel extends AccountsMetaEntity {
-  const AccountsMetaModel({
+class MetaModel extends MetaEntity {
+  const MetaModel({
     required int totalPages,
   }) : super(
           totalPages: totalPages,
         );
 
-  factory AccountsMetaModel.fromJson(Map<String, dynamic> json) {
-    return AccountsMetaModel(
+  factory MetaModel.fromJson(Map<String, dynamic> json) {
+    return MetaModel(
       totalPages: json['totalPages'] as int,
     );
   }
 }
 
-class AccountsLinksModel extends AccountsLinksEntity {
-  const AccountsLinksModel({
+class LinksModel extends LinksEntity {
+  const LinksModel({
     required String self,
   }) : super(self: self);
 
-  factory AccountsLinksModel.fromJson(Map<String, dynamic> json) {
-    return AccountsLinksModel(
+  factory LinksModel.fromJson(Map<String, dynamic> json) {
+    return LinksModel(
       self: json['self'] as String,
     );
   }

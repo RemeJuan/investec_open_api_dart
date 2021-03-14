@@ -4,8 +4,8 @@ import 'package:investec_open_api/domain/entities/account_balance_entity.dart';
 class AccountBalanceModel extends AccountBalanceEntity {
   const AccountBalanceModel({
     required AccountBalanceDataModel data,
-    required AccountsLinksModel links,
-    required AccountsMetaModel meta,
+    required LinksModel links,
+    required MetaModel meta,
   }) : super(
           meta: meta,
           links: links,
@@ -16,8 +16,8 @@ class AccountBalanceModel extends AccountBalanceEntity {
     return AccountBalanceModel(
       data: AccountBalanceDataModel.fromJson(
           json['data'] as Map<String, dynamic>),
-      links: AccountsLinksModel.fromJson(json['links'] as Map<String, dynamic>),
-      meta: AccountsMetaModel.fromJson(json['meta'] as Map<String, dynamic>),
+      links: LinksModel.fromJson(json['links'] as Map<String, dynamic>),
+      meta: MetaModel.fromJson(json['meta'] as Map<String, dynamic>),
     );
   }
 }
