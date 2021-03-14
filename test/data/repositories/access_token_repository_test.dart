@@ -1,6 +1,6 @@
 import 'package:investec_open_api/data/repositories/access_token_repository_impl.dart';
 import 'package:investec_open_api/data/sources/access_token_remote_source.dart';
-import 'package:investec_open_api/domain/repositories/access_token_repositorye.dart';
+import 'package:investec_open_api/domain/repositories/access_token_repository.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';

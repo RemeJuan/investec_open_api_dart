@@ -92,7 +92,48 @@ const accounts = AccountsEntity(
 
 #### api.getAccountTransactions() (Unimplemented)
 
-#### api.getAccountBalance() (Unimplemented)
+#### api.getAccountBalance()
+
+Returns teh account balance details for a provided account number.
+
+**Sample API Response**
+
+```json
+{
+  "data": {
+    "accountId": "account-number",
+    "currentBalance": 1234.65,
+    "availableBalance": 9876.00,
+    "currency": "ZAR"
+  },
+  "links": {
+    "self": "mock-url"
+  },
+  "meta": {
+    "totalPages": 1
+  }
+}
+```
+
+**Sample resulting dart class**
+
+```dart
+
+const accountBalanceFixture = AccountBalanceModel(
+  data: AccountBalanceDataModel(
+    accountId: 'account-number',
+    currentBalance: 1234.65,
+    availableBalance: 9876.00,
+    currency: 'ZAR',
+  ),
+  links: AccountsLinks(
+    self: 'mock-url',
+  ),
+  meta: AccountsMeta(
+    totalPages: 1,
+  ),
+);
+```
 
 ---
 

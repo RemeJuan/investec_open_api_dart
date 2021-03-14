@@ -1,0 +1,14 @@
+{
+  "data": {
+    "accountId": "account-number",
+    "currentBalance": 1234.65,
+    "availableBalance": 9876.00,
+    "currency": "ZAR"
+  },
+  "links": {
+    "self": "mock-url"
+  },
+  "meta": {
+    "totalPages": 1
+  }
+}

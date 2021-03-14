@@ -1,4 +1,4 @@
-import 'package:investec_open_api/domain/repositories/access_token_repositorye.dart';
+import 'package:investec_open_api/domain/repositories/access_token_repository.dart';
 import 'package:investec_open_api/domain/usecases/get_access_token_usecase.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';

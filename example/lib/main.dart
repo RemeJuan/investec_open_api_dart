@@ -13,5 +13,8 @@ void main() async {
   final accounts = await api.getAccounts();
 
   // This would be all the available accounts.
-  print(accounts.data.accounts); // List<AccountEntity>
+  print(accounts.data.accounts); // List<AccountModel>
+
+  final accountBalance = await api.getAccountBalance('ACCOUNT_NUMBER');
+  print(accountBalance.data); // AccountBalanceModel
 }

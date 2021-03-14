@@ -7,6 +7,7 @@ import 'package:test/test.dart';
 
 import '../../fixtures/accounts/accounts_fixture.dart';
 import '../../fixtures/fixture_reader.dart';
+import '../../fixtures/shared_fixtures.dart';
 
 void main() {
   test('should be a subclass of [AccessTokenEntity]', () async {
