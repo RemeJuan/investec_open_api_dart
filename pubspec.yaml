@@ -4,14 +4,14 @@ version: 0.2.0
 repository: https://github.com/RemeJuan/investec_open_api_dart
 
 environment:
-  sdk: ">=2.12.0-0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 scripts: derry.yaml
 
 dependencies:
-  equatable: 2.0.0
+  equatable: ^2.0.0
   http: ^0.13.0
-  universal_io: 2.0.0
+  universal_io: ^2.0.0
 
 dev_dependencies:
   test: 1.16.2
