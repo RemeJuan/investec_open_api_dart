@@ -5,9 +5,7 @@ import 'package:investec_open_api/domain/entities/account_balance_entity.dart';
 import 'package:test/test.dart';
 
 import '../../fixtures/account_balance/account_balance_fixture.dart';
-import '../../fixtures/accounts/accounts_fixture.dart';
 import '../../fixtures/fixture_reader.dart';
-import '../../fixtures/shared_fixtures.dart';
 
 void main() {
   test('should be a subclass of [AccountBalanceEntity]', () async {
@@ -30,9 +28,7 @@ void main() {
 
   test('verify stringify enabled', () async {
     //assert
-    expect(accountsFixture.stringify, true);
-    expect(accountFixture.stringify, true);
-    expect(accountLinkFixture.stringify, true);
-    expect(accountMetaFixture.stringify, true);
+    expect(accountBalanceFixture.stringify, true);
+    expect(accountBalanceDataFixture.stringify, true);
   });
 }
